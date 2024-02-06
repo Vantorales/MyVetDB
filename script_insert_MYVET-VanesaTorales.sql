@@ -1,0 +1,200 @@
+--  DROP DATABASE IF EXISTS MYVETdb;
+-- CREATE DATABASE MYVETdb;
+USE MYVETdb;
+
+-- INSERCIÓN 
+INSERT INTO Doctor (nombreDoc, apellidoDoc, especialidad) VALUES
+	('Juan', 'Pérez', 'Cardiología'),
+	('María', 'González', 'Dermatología'),
+	('Pedro', 'Ramírez', 'Cirugía'),
+	('Laura', 'Martínez', 'Oftalmología'),
+	('Carlos', 'López', 'Neurología'),
+	('Sofía', 'Fernández', 'Endocrinología'),
+	('Luis', 'Gómez', 'Ortopedia'),
+	('Ana', 'Rodríguez', 'Oncología'),
+	('Ricardo', 'Sánchez', 'Radiología'),
+	('Mónica', 'Díaz', 'Nutrición'),
+	('Miguel', 'Ferrer', 'Traumatología'),
+	('Valeria', 'Torres', 'Odontología'),
+	('Eduardo', 'Ortega', 'Nefrología'),
+	('Isabel', 'Luna', 'Oncología'),
+	('Gabriel', 'Silva', 'Dermatología'),
+	('Carolina', 'Molina', 'Oftalmología'),
+	('Antonio', 'Santos', 'Cirugía'),
+	('Carmen', 'Hernández', 'Cardiología'),
+	('Rafael', 'Vargas', 'Endocrinología'),
+	('Patricia', 'Rojas', 'Radiología');
+
+
+INSERT INTO Dueño (nombreDue, apellidoDue, direccion, telefono) VALUES
+    ('Ana', 'López', 'Calle 123, Ciudad', '123-456-7890'),
+    ('Carlos', 'Martínez', 'Avenida XYZ, Pueblo', '987-654-3210'),
+    ('Laura', 'Rodríguez', 'Calle Principal, Villa', '555-123-4567'),
+    ('Miguel', 'García', 'Av. Central, Barrio', '111-222-3333'),
+    ('Sofía', 'Fernández', 'Calle 456, Localidad', '777-888-9999'),
+    ('Luis', 'Gómez', 'Carrera 789, Colonia', '555-666-7777'),
+    ('Ricardo', 'Sánchez', 'Avenida ABC, Pueblo', '999-888-7777'),
+    ('Mónica', 'Díaz', 'Calle 987, Villa', '444-333-2222'),
+    ('Valeria', 'Torres', 'Calle XYZ, Localidad', '222-111-4444'),
+    ('Eduardo', 'Ortega', 'Av. 1234, Ciudad', '333-222-1111'),
+    ('Isabel', 'Luna', 'Carrera 567, Barrio', '888-777-6666'),
+    ('Gabriel', 'Silva', 'Calle ABC, Pueblo', '777-666-5555'),
+    ('Carolina', 'Molina', 'Av. 4567, Villa', '666-555-4444'),
+    ('Antonio', 'Santos', 'Calle 345, Ciudad', '555-444-3333'),
+    ('Carmen', 'Hernández', 'Av. XYZ, Localidad', '444-333-2222'),
+    ('Rafael', 'Vargas', 'Carrera 789, Colonia', '333-222-1111'),
+    ('Patricia', 'Rojas', 'Calle 123, Pueblo', '111-222-3333'),
+    ('José', 'López', 'Av. ABC, Villa', '444-555-6666'),
+    ('Alicia', 'Pérez', 'Calle 678, Ciudad', '555-666-7777'),
+    ('Andrés', 'González', 'Carrera 1234, Barrio', '777-888-9999');
+
+
+INSERT INTO Paciente (nombrePac, edad, especie, peso, ID_dueño) VALUES
+    ('Max', 3, 'Perro', 10.5, 1),
+    ('Luna', 2, 'Gato', 5.2, 2),
+    ('Rocky', 5, 'Conejo', 2.1, 3),
+    ('Buddy', 1, 'Perro', 7.0, 4),
+    ('Mia', 4, 'Gato', 6.3, 5),
+    ('Lucas', 2, 'Perro', 8.5, 6),
+    ('Lola', 3, 'Gato', 4.8, 7),
+    ('Toby', 1, 'Perro', 6.2, 8),
+    ('Nina', 6, 'Conejo', 2.3, 9),
+    ('Leo', 2, 'Perro', 9.7, 10),
+    ('Milo', 7, 'Gato', 5.5, 11),
+    ('Coco', 1, 'Perro', 6.9, 12),
+    ('Bella', 4, 'Gato', 5.1, 13),
+    ('Tina', 3, 'Perro', 8.4, 14),
+    ('Rocky', 5, 'Gato', 6.6, 15),
+    ('Max', 2, 'Perro', 11.2, 16),
+    ('Luna', 4, 'Gato', 5.7, 17),
+    ('Cleo', 1, 'Perro', 9.3, 18),
+    ('Sofía', 5, 'Gato', 4.5, 19),
+    ('Leo', 3, 'Perro', 7.8, 20);
+
+
+INSERT INTO Diagnostico (fecha, comentario, ID_doctor, ID_paciente) VALUES
+    ('2023-09-27 10:00:00', 'Diagnóstico para Max', 1, 1),
+    ('2023-09-28 11:30:00', 'Diagnóstico para Luna', 2, 2),
+    ('2023-09-29 09:15:00', 'Diagnóstico para Rocky', 3, 3),
+    ('2023-09-30 14:00:00', 'Diagnóstico para Buddy', 4, 4),
+    ('2023-10-01 16:30:00', 'Diagnóstico para Mia', 5, 5),
+    ('2023-10-02 09:45:00', 'Diagnóstico para Lucas', 6, 6),
+    ('2023-10-03 14:15:00', 'Diagnóstico para Lola', 7, 7),
+    ('2023-10-04 11:00:00', 'Diagnóstico para Toby', 8, 8),
+    ('2023-10-05 13:30:00', 'Diagnóstico para Nina', 5, 9),
+    ('2023-10-06 10:30:00', 'Diagnóstico para Leo', 10, 10),
+    ('2023-10-07 12:45:00', 'Diagnóstico para Milo', 11, 11),
+    ('2023-10-08 15:00:00', 'Diagnóstico para Coco', 12, 12),
+    ('2023-10-09 08:15:00', 'Diagnóstico para Bella', 13, 13),
+    ('2023-10-10 17:00:00', 'Diagnóstico para Tina', 14, 14),
+    ('2023-10-11 10:45:00', 'Diagnóstico para Rocky', 15, 15),
+    ('2023-10-12 16:30:00', 'Diagnóstico para Max', 5, 16),
+    ('2023-10-13 14:00:00', 'Diagnóstico para Luna', 17, 17),
+    ('2023-10-14 11:15:00', 'Diagnóstico para Cleo', 18, 18),
+    ('2023-10-15 09:30:00', 'Diagnóstico para Sofía', 19, 19),
+    ('2023-10-16 12:30:00', 'Diagnóstico para Leo', 20, 20);
+
+
+INSERT INTO Turno (fechaTurno, horarioTurno, estado, tipoTurno, precio, ID_doctor, ID_paciente, ID_dueño) VALUES
+    ('2023-10-05', '10:30:00', 'Pendiente', 'Control', 50.00, 1, 1, 1),
+    ('2023-10-06', '15:00:00', 'Confirmado', 'Consulta', 60.00, 2, 2, 2),
+    ('2023-10-07', '14:45:00', 'Cancelado', 'Consulta', 55.00, 3, 3, 3),
+    ('2023-10-08', '09:00:00', 'Confirmado', 'Control', 45.00, 4, 4, 4),
+    ('2023-10-09', '11:15:00', 'Pendiente', 'Consulta', 65.00, 5, 5, 5),
+    ('2023-10-10', '16:30:00', 'Pendiente', 'Control', 50.00, 6, 6, 6),
+    ('2023-10-11', '08:45:00', 'Confirmado', 'Consulta', 60.00, 7, 7, 7),
+    ('2023-10-12', '12:30:00', 'Cancelado', 'Consulta', 55.00, 8, 8, 8),
+    ('2023-10-13', '14:00:00', 'Confirmado', 'Control', 45.00, 9, 9, 9),
+    ('2023-10-14', '10:30:00', 'Pendiente', 'Consulta', 65.00, 10, 10, 10),
+    ('2023-10-15', '15:15:00', 'Pendiente', 'Control', 50.00, 11, 11, 11),
+    ('2023-10-16', '08:00:00', 'Confirmado', 'Consulta', 60.00, 12, 12, 12),
+    ('2023-10-17', '13:45:00', 'Cancelado', 'Consulta', 55.00, 13, 13, 13),
+    ('2023-10-18', '14:30:00', 'Confirmado', 'Control', 45.00, 14, 14, 14),
+    ('2023-10-19', '11:00:00', 'Pendiente', 'Consulta', 65.00, 15, 15, 15),
+    ('2023-10-20', '16:00:00', 'Pendiente', 'Control', 50.00, 16, 16, 16),
+    ('2023-10-21', '09:45:00', 'Confirmado', 'Consulta', 60.00, 17, 17, 17),
+    ('2023-10-22', '12:15:00', 'Cancelado', 'Consulta', 55.00, 18, 18, 18),
+    ('2023-10-23', '14:45:00', 'Confirmado', 'Control', 45.00, 19, 19, 19),
+    ('2023-10-24', '10:00:00', 'Pendiente', 'Consulta', 65.00, 20, 20, 20);
+
+
+INSERT INTO Insumo (nombreInsu, cantidad, precio) VALUES
+    ('Vacuna para perros', 100, 15.00),
+    ('Jeringa', 200, 2.50),
+    ('Alimento para gatos', 50, 10.00),
+    ('Vendaje', 150, 4.00),
+    ('Antipulgas', 80, 8.50),
+    ('Vitaminas para perros', 90, 12.00),
+    ('Analgésicos', 120, 6.75),
+    ('Shampoo para gatos', 40, 7.25),
+    ('Toallas quirúrgicas', 250, 3.50),
+    ('Collares antipulgas', 70, 9.75),
+    ('Vacuna para gatos', 80, 14.00),
+    ('Guantes médicos', 300, 4.25),
+    ('Alimento para conejos', 30, 11.50),
+    ('Jaulas para mascotas', 10, 35.00),
+    ('Termómetros digitales', 50, 5.50),
+    ('Agua oxigenada', 100, 2.00),
+    ('Suturas', 60, 8.00),
+    ('Esparadrapo', 180, 2.25),
+    ('Pipetas antipulgas', 45, 11.75),
+    ('Pañales para perros', 25, 6.50);
+
+
+INSERT INTO Proveedor (nombreProv, telefono) VALUES
+    ('Proveedor1', '111-222-3333'),
+    ('Proveedor2', '444-555-6666'),
+    ('Proveedor3', '777-888-9999'),
+    ('Proveedor4', '888-777-6666'),
+    ('Proveedor5', '555-444-3333'),
+    ('Proveedor6', '222-333-4444'),
+    ('Proveedor7', '666-777-8888'),
+    ('Proveedor8', '999-888-7777'),
+    ('Proveedor9', '777-555-4444'),
+    ('Proveedor10', '333-222-1111'),
+    ('Proveedor11', '555-777-9999'),
+    ('Proveedor12', '444-666-8888'),
+    ('Proveedor13', '111-555-3333'),
+    ('Proveedor14', '999-777-5555'),
+    ('Proveedor15', '222-444-6666'),
+    ('Proveedor16', '888-333-7777'),
+    ('Proveedor17', '666-444-2222'),
+    ('Proveedor18', '555-333-1111'),
+    ('Proveedor19', '444-777-9999'),
+    ('Proveedor20', '777-111-3333');
+    
+    -- Inserción de datos en la tabla de relación Insumo_proveedor
+INSERT INTO Insumo_proveedor (ID_proveedor, ID_insumo) VALUES 
+	(1, 11),
+	(2, 5),
+	(3, 1),
+	(4, 10),
+	(5, 9),
+	(6, 6),
+	(7, 7),
+	(8, 8),
+	(9, 13),
+	(10, 3),
+	(11, 11),
+	(12, 2),
+	(13, 12),
+	(14, 4),
+	(15, 3);
+
+-- Inserción de datos en la tabla Insumo_diagnostico
+INSERT INTO Insumo_diagnostico (ID_diagnostico, ID_insumo) VALUES 
+	(1, 7),
+	(2, 4),
+	(3, 8),
+	(4, 4),
+	(5, 1),
+	(6, 6),
+	(7, 11),
+	(8, 10),
+	(9, 9),
+	(10, 2),
+	(11, 5),
+	(12, 3),
+	(13, 15),
+	(14, 14),
+	(15, 13);
